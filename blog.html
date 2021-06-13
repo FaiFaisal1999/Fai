@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaiBeauty(Blog)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body background="blog.png">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="home.html">FaiBeauty</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarsExample03">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item mx-4">
+              <a class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active nav-item mx-4">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item mx-4">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item mx-4">
+                <a class="nav-link" href="about.html">Who are we ?</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container mt-0"  >
+        <div class="jumbotron p-0 p-md-0" style="background: white;">  </div>
+            <div class="col-md-30 px-16" style="background-color: blanchedalmond;">
+              <h1  class="display-4 font-italic " style="background: rgb(175, 142, 98) ;">
+                <center> Welcome ..!</center> </h1>
+              <h3 class="lead my-3" > 
+                <center style="color: brown;"> to FaiBeauty blog </center></h3>
+            </div>
+          </div>
+          
+          <div class="container px-4">
+            <div class="card">
+                <div class="card-body ">
+                <h3> Do you want to publish a blog? </h3>
+                  <h6>Please enter your blog title and text here ..! </h6>
+                <div class="form-group">
+                    <label for="titleInput">Title</label>
+                    <input type="text" class="form-control" id="titleInput" placeholder="Enter Title">
+                </div>
+                <div id="titleErr" class="alert alert-danger" style="display:none" role="alert">Please add a title to your post</div>
+                
+                <div class="form-group">
+                    <label for="textInput">Text</label>
+                    <textarea rows="4" class="form-control" id="textInput" placeholder="Enter Text"></textarea>
+                </div>
+                <div id="textErr" class="alert alert-danger" style="display:none" role="alert">Please add some text to your post</div>
+                <button id="blogSubmit" onclick="blogSubmit()" class="btn btn-lg btn-primary">Submit</button>
+                </div>
+            </div>
+
+            <br>
+            <div id="blogPosts">
+            <br>
+
+
+
+            <div class="singlePost">
+              <br>
+              <div class="card">
+              <div class="card-body" style="color:rgb(110, 78, 30);">
+                <div class="row title-row">
+                  <div class="col-4"><h1 class="blogTitle" style="color:burlywood;">Article Clean beauty101 :</h1></div>
+                  <div class="col-4"></div>
+                  <div class="col-2"></div>
+                  <div class="col-2"><button onclick="blogEditToggle(this)" class="btn btn-sm btn-info m-1">Edit</button> <button onclick="blogDelete(this)" class="btn btn-sm btn-danger m-1">Delete</button></div>
+                </div>
+              
+              <i class="text-muted">by Jessica Migala</i><br/><br/>
+              <p class="blogText">If you’ve hopped on social media at all in the last couple of years, you may have noticed the push to green your beauty routine. It’s a movement toward “clean beauty,” but the definition is less straightforward than you may think.
+                What Is ‘Clean’ Beauty, Anyway? It all depends on whom you ask. “The definition of ‘clean beauty’ is pretty nebulous,” says Michele Farber, MD, a board-certified dermatologist with Schweiger Dermatology Group in Philadelphia. There are no strict guidelines on what can be called clean or natural, which makes it complicated for a skin-care consumer.
+                Products: What to Know Because there’s no formal guidance, it’s up to you to decide what clean beauty means to you, and that will depend on what you’re looking for. Clean beauty could mean:
+                You’re actively looking to minimize certain controversial chemicals in your skin care, including fragrance, preservatives like parabens and phthalates, and dyes, all of which can be irritating for skin. But this may mean that you are still using products that contain chemicals.
+                You’re looking to minimize your exposure to all chemicals. You might then opt for truly natural products, like using coconut oil as a body moisturizer.
+                You’re “cleaner” when it comes to certain products in your routine, like cleansers and soaps, but still use conventional acne products because you find these treat your skin problem better.
+                .</p>
+  
+              
+  
+  
+                <div class="editForm" style="display:none">
+                <h4>Edit this blog post</h4>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" placeholder="Enter a Title" value="${Title}">
+                </div>
+                
+                <div class="form-group">
+                    <label>Text</label>
+                    <textarea rows="4" class="form-control" id="textInput" placeholder="Enter text">${Text}</textarea>
+                </div>
+  
+                <button onclick="blogEdit(this)" class="btn btn-lg btn-primary">Submit</button>
+              </div>
+              </div>    
+              </div>
+              </div>
+
+
+            <div class="singlePost">
+            <br>
+            <div class="card">
+            <div class="card-body" style="color:rgb(110, 78, 30);" >
+              <div class="row title-row">
+                <div class="col-4"><h1 class="blogTitle" style="color:burlywood;" > How Aging and Gravity Affect Your Skin</h1></div>
+                <div class="col-4"></div>
+                <div class="col-2"></div>
+                <div class="col-2"><button onclick="blogEditToggle(this)" class="btn btn-sm btn-info m-1">Edit</button> <button onclick="blogDelete(this)" class="btn btn-sm btn-danger m-1">Delete</button></div>
+              </div>
+            
+            <i class="text-muted">by Dr. Buckingham’s </i><br/><br/>
+            <p class="blogText">what Causes Our Faces to Show the Effects of Age?
+              Buckingham: There isn’t one specific thing that makes your face look older, but rather a combination of three factors: skin changes, volume loss, and gravitational changes. Although these elements apply to everyone, each person will experience them a little differently because of intrinsic and extrinsic aging.
+              Intrinsic factors are internal things that help determine how your skin looks and shows signs of aging. For example, your ethnicity. Extrinsic factors are external factors; They’re the things we do to ourselves that cause skin changes, and can often be prevented.
+              How Do Skin Changes Contribute to Aging?
+              Buckingham: Your genetics — what kind of skin you are born with — influences how your face shows signs of aging.
+              Fair skin tends to be more susceptible to damage and thinning, which means you tend to get more wrinkles and brown spots.
+              There isn’t one specific thing that makes your face look older, but rather a combination of three factors: skin changes, volume loss, and gravitational changes.
+              .</p>
+
+            
+
+
+              <div class="editForm" style="display:none">
+              <h4>Edit this blog post</h4>
+              <div class="form-group">
+                  <label>Title</label>
+                  <input type="text" class="form-control" placeholder="Enter a Title" value="${Title}">
+              </div>
+              
+              <div class="form-group">
+                  <label>Text</label>
+                  <textarea rows="4" class="form-control" id="textInput" placeholder="Enter text">${Text}</textarea>
+              </div>
+
+              <button onclick="blogEdit(this)" class="btn btn-lg btn-primary">Submit</button>
+            </div>
+            </div>    
+            </div>
+            </div>
+
+            
+            <div class="singlePost">
+              <br>
+              <div class="card">
+              <div class="card-body" style="color:rgb(110, 78, 30);" >
+                <div class="row title-row">
+                  <div class="col-4"><h1 class="blogTitle" style="color:burlywood;" > Can 'Resetting' Your Hormones Improve Your Skin?</h1></div>
+                  <div class="col-4"></div>
+                  <div class="col-2"></div>
+                  <div class="col-2"><button onclick="blogEditToggle(this)" class="btn btn-sm btn-info m-1">Edit</button> <button onclick="blogDelete(this)" class="btn btn-sm btn-danger m-1">Delete</button></div>
+                </div>
+              
+              <i class="text-muted">by Jessica Migala
+              </i><br/><br/>
+              <p class="blogText">Hormones Affect Skin Health in a Variety of Ways
+                Your hormones don’t just control how you feel — they can impact the health of your skin, too. “Hormones play a key role in skin health. We know this because certain hormonal disorders manifest themselves in the skin and hair, in addition to internally,” says S. Tyler Hollmig, MD, director of dermatologic surgery at UT Dell Medical School and Ascension Seton in Austin, Texas. Hormone levels largely go unnoticed unless there’s something off. For instance, having low levels of thyroid hormones, called hypothyroidism, can contribute to weight gain, low mood, constipation, and even dry skin, according to the Mayo Clinic. Excess androgen — considered typical male hormones, which females also have — can stimulate sebaceous glands in skin to pump out oil, one factor that contributes to the development of acne.
+                </p>
+  
+              
+  
+  
+                <div class="editForm" style="display:none">
+                <h4>Edit this blog post</h4>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" placeholder="Enter a Title" value="${Title}">
+                </div>
+                
+                <div class="form-group">
+                    <label>Text</label>
+                    <textarea rows="4" class="form-control" id="textInput" placeholder="Enter text">${Text}</textarea>
+                </div>
+  
+                <button onclick="blogEdit(this)" class="btn btn-lg btn-primary">Submit</button>
+              </div>
+              </div>    
+              </div>
+              </div>
+
+            <div class="singlePost">
+              <br>
+              <div class="card">
+              <div class="card-body" style="color:rgb(110, 78, 30);">
+                <div class="row title-row">
+                  <div class="col-4"><h1 class="blogTitle" style="color:burlywood;">10 Natural Dry-Skin Remedies You Can DIY at Home</h1></div>
+                  <div class="col-4"></div>
+                  <div class="col-2"></div>
+                  <div class="col-2"><button onclick="blogEditToggle(this)" class="btn btn-sm btn-info m-1">Edit</button> <button onclick="blogDelete(this)" class="btn btn-sm btn-danger m-1">Delete</button></div>
+                </div>
+              
+              <i class="text-muted">by Kristeen Cherney</i><br/><br/>
+              <p class="blogText">10 Natural, DIY Remedies to Moisturize Dry Skin :
+                1. Whip Up an Olive Oil Cleanser to Soothe Dry Skin 2. DIY a Rich, Creamy Avocado Mask 
+                3. Make a Natural Olive Oil and Sugar Scrub  4. Create an Easy Oatmeal Soak to Calm Your Skin 
+                5. Exfoliate Your Face With a Homemade Oatmeal Honey Mask 6. Apply Coconut Oil Before Bedtime
+                7. Add Your Favorite Oil to Your Bath 8. Use Milk Compresses for Irritated Skin
+                9. Consider a Fruit Enzyme Cleanser or Exfoliant 10. Apply Aloe Vera to Dry, Irritated Skin.</p>
+  
+              
+  
+  
+                <div class="editForm" style="display:none">
+                <h4>Edit this blog post</h4>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" placeholder="Enter a Title" value="${Title}">
+                </div>
+                
+                <div class="form-group">
+                    <label>Text</label>
+                    <textarea rows="4" class="form-control" id="textInput" placeholder="Enter text">${Text}</textarea>
+                </div>
+  
+                <button onclick="blogEdit(this)" class="btn btn-lg btn-primary">Submit</button>
+              </div>
+              </div>    
+              </div>
+              </div>
+
+            </div>
+            
+          </div>
+          <br/><br/><br/><br/>
+      </div>
+
+
+
+
+    <script src="./blog.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
